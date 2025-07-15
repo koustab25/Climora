@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Climora Weather App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="background_scene" itemid="background_scene">
+
+  </div>
+
+<div class="logo_search_bar_div">
+  <div class="logo">
+    <img class="logo_png" src="assets/star.png" alt="star">
+    <h1 class="logo_text">CLIMORA</h1>
+  </div>
+  <div class="search_bar">
+    <input class="search_city" id="search_city" type="text" placeholder="Search City">
+    <button class="search_btn" id="search_btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div style="display: flex; flex-direction: column;">
+<div class="main_div_1">
+  <div class="uper_wrap">
+  <div class="max_min_location_time_date_div">
+    <div class="time_date_location_div">
+      <div class="time_date_div">
+        <p id="time" class="time">14:00</p>
+        <p id="date" class="date">21 Aug</p>
+      </div>
+      <div class="location_div">
+        <h3 class="location_png">📍</h3>
+        <h3 class="location" id="location">London</h3>
+      </div>
+    </div>
+    <div class="max_min_temp_div">
+      <div class="max_temp_div">
+        <h3 class="max_temp" id="max_temp">20°</h3>
+        <p class="max_temp_text">Max Temp</p>
+      </div>
+      <div class="max_temp_div min_temp_div">
+        <h3 class="max_temp min_temp" id="min_temp">9°</h3>
+        <p class="min_temp_text">Min Temp</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather_png_current_temp">
+    <img class="weather_png" id="weather_png" src="assets/rainyNight-Photoroom.png" alt="">
+    <div class="current_temp_div">
+      <h2 class="current_temp" id="current_temp">19°</h2>
+      <h5 class="current_temp_text">In <span class="celcius_text">Celcius</span></h5>
+    </div>
+  </div>
+  </div>
+  <h4 class="suggestion" id="suggestion">It is going to be cloudy , make sure to bring umbrella ☔️😉</h4>
+<!-- basic infos -->
+  <div class="humidity_windspeed_realfeel_uv_div">
+    <div class="humidity_div sec2_div">
+      <img class="sec2_icons humidity_icon" src="assets/weather.png" alt="">
+      <h3 class="sec2_heading humidity" id="humidity">64%</h3>
+      <p class="sec2_para humidity_text">Humidity</p>
+    </div>
+    <div class="humidity_div sec2_div">
+      <img class="sec2_icons realfeel_icon" src="assets/realfeel-Photoroom.png" alt="">
+      <h3 class="sec2_heading realfeel" id="realfeel">21°</h3>
+      <p class="sec2_para realfeel_text">Real feel</p>
+    </div>    
+    <div class="windspeed_div sec2_div">
+      <img class="sec2_icons windspeed_icon" src="assets/wind.png" alt="">
+      <h3 class="sec2_heading windspeed" id="windspeed">135 km/h</h3>
+      <p class="sec2_para windspeed">Wind speed</p>
+    </div>
+    <div class="aqi_div sec2_div">
+      <img class="sec2_icons aqi_icon" src="assets/aqi-Photoroom.png" alt="">
+      <h3 class="sec2_heading aqi" id="aqi">64%</h3>
+      <p class="sec2_para aqi">Aqi</p>
+    </div>
+     <div class="aqi_div sec2_div">
+      <img class="sec2_icons uv_icon" src="assets/uv-rays.png" alt="">
+      <h3 class="sec2_heading uv" id="uv">5</h3>
+      <p class="sec2_para uv">UV Index</p>
+    </div>
+     <div class="aqi_div sec2_div">
+      <img class="sec2_icons visibility_icon" src="assets/eye.png" alt="">
+      <h3 class="sec2_heading visibility" id="visibility">10 km</h3>
+      <p class="sec2_para visibility">Visibility</p>
+    </div>
+    <div class="aqi_div sec2_div">
+      <img class="sec2_icons Pressure_icon" src="assets/barometer (1).png" alt="">
+      <h3 class="sec2_heading Pressure" id="Pressure">1013 hPa</h3>
+      <p class="sec2_para Pressure">Pressure</p>
+    </div>
+     <div class="sunrise_sunset_div sec2_div">
+  <img class="sec2_icons" src="assets/sunrise2.png" alt="Sunrise and Sunset Icon">
+  <h3 class="sec2_heading" id="sunrise_sunset_time">05:45 / 18:32</h3>
+  <p class="sec2_para">Sunrise / Sunset</p>
+</div>
+  </div>
+</div>
+<h3 class="hourly_forecasts"> ⏲ Hourly Forcasts</h3>
+<!-- HOURLY FORECAST -->
+<div class="main_div_2">
+  <div class="sec3_div Hour1_div">
+    <h3 class="sec3_heading Hour1_temp" id="Hour1_temp">19°</h3>
+    <img class="sec3_weather_png Hour1_weather_png" id="Hour1_weather_png" src="assets/rainyNight-Photoroom.png" alt="">
+    <h6 class="Hour1_time sec3_time" id="Hour1_time">15:00</h6>
+  </div>
+  <div class="sec3_div Hour2_div">
+    <h3 class="sec3_heading Hour2_temp" id="Hour2_temp">19°</h3>
+    <img class="sec3_weather_png Hour2_weather_png" id="Hour2_weather_png" src="assets/rainyNight-Photoroom.png" alt="">
+    <h6 class="Hour2_time sec3_time" id="Hour2_time">18:00</h6>
+  </div>
+  <div class="sec3_div Hour3_div">
+    <h3 class="sec3_heading Hour3_temp" id="Hour3_temp">19°</h3>
+    <img class="sec3_weather_png Hour3_weather_png" id="Hour3_weather_png" src="assets/rainyNight-Photoroom.png" alt="">
+    <h6 class="Hour3_time sec3_time" id="Hour3_time">21:00</h6>
+  </div>
+  <div class="sec3_div Hour4_div">
+    <h3 class="sec3_heading Hour4_temp" id="Hour4_temp">19°</h3>
+    <img class="sec3_weather_png Hour4_weather_png" id="Hour4_weather_png" src="assets/rainyNight-Photoroom.png" alt="">
+    <h6 class="Hour4_time sec3_time" id="Hour4_time">00:00</h6>
+  </div>
+  <div class="sec3_div Hour5_div">
+    <h3 class="sec3_heading Hour5_temp" id="Hour5_temp">19°</h3>
+    <img class="sec3_weather_png Hour5_weather_png" id="Hour5_weather_png" src="assets/rainyNight-Photoroom.png" alt="">
+    <h6 class="Hour5_time sec3_time" id="Hour5_time">03:00</h6>
+  </div>
+  <div class="sec3_div Hour6_div">
+    <h3 class="sec3_heading Hour6_temp" id="Hour6_temp">19°</h3>
+    <img class="sec3_weather_png Hour6_weather_png" id="Hour6_weather_png" src="assets/rainyNight-Photoroom.png" alt="">
+    <h6 class="Hour6_time sec3_time" id="Hour6_time">06:00</h6>
+  </div>
+  <div class="sec3_div Hour7_div">
+    <h3 class="sec3_heading Hour7_temp" id="Hour7_temp">19°</h3>
+    <img class="sec3_weather_png Hour7_weather_png" id="Hour7_weather_png" src="assets/rainyNight-Photoroom.png" alt="">
+    <h6 class="Hour7_time sec3_time" id="Hour7_time">09:00</h6>
+  </div>
+  <div class="sec3_div Hour8_div">
+    <h3 class="sec3_heading Hour8_temp" id="Hour8_temp">19°</h3>
+    <img class="sec3_weather_png Hour8_weather_png" id="Hour8_weather_png" src="assets/rainyNight-Photoroom.png" alt="">
+    <h6 class="Hour8_time sec3_time" id="Hour8_time">12:00</h6>
+  </div>
+  <div class="sec3_div Hour9_div">
+    <h3 class="sec3_heading Hour9_temp" id="Hour9_temp">19°</h3>
+    <img class="sec3_weather_png Hour9_weather_png" id="Hour9_weather_png" src="assets/rainyNight-Photoroom.png" alt="">
+    <h6 class="Hour9_time sec3_time" id="Hour9_time">15:00</h6>
+  </div>
+</div>
+
+
+<!-- 6 DAYS FORECAST -->
+<div class="5days_forecast">
+    <h2 class="sec4_heading"> 🗓️ Next <span class="_5text">6</span> days forecasts</h2>
+</div>
+
+<div class="sec5_div">
+  <div class="sec5_sub day1_div">
+    <h5 class="sec5_heading day1" id="day1">Monday</h5>
+    <p class="sec5_temp day1_temp" id="day1_temp">15°</p>
+    <img class="sec5_weather_png day1_weather_png" id="day1_weather_png" src="assets/sunnyday-Photoroom.png" alt="">
+  </div>
+  <div class="sec5_sub day2_div">
+    <h5 class="sec5_heading day2" id="day2">Tuesday</h5>
+    <p class="sec5_temp day2_temp" id="day2_temp">20°</p>
+    <img class="sec5_weather_png day2_weather_png" id="day2_weather_png" src="assets/mildRainyDay-Photoroom.png" alt="">
+  </div>
+  <div class="sec5_sub day3_div">
+    <h5 class="sec5_heading day3" id="day3">Wednesday</h5>
+    <p class="sec5_temp day3_temp" id="day3_temp">19°</p>
+    <img class="sec5_weather_png day3_weather_png" id="day3_weather_png" src="assets/fullCloudy-Photoroom.png" alt="">
+  </div>
+  <div class="sec5_sub day4_div">
+    <h5 class="sec5_heading day4" id="day4">Thursday</h5>
+    <p class="sec5_temp day4_temp" id="day4_temp">25°</p>
+    <img class="sec5_weather_png day4_weather_png" id="day4_weather_png" src="assets/mildRainyDay-Photoroom.png" alt="">
+  </div>
+  <div class="sec5_sub day5_div">
+    <h5 class="sec5_heading day5" id="day5">Friday</h5>
+    <p class="sec5_temp day5_temp" id="day5_temp">23°</p>
+    <img class="sec5_weather_png day5_weather_png" id="day5_weather_png" src="assets/fullCloudy-Photoroom.png" alt="">
+  </div>
+  <div class="sec5_sub day6_div">
+    <h5 class="sec5_heading day6" id="day6">Saturday</h5>
+    <p class="sec5_temp day6_temp" id="day6_temp">9°</p>
+    <img class="sec5_weather_png day6_weather_png" id="day6_weather_png" src="assets/fullCloudy-Photoroom.png" alt="">
+  </div>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body> 
+</html>
+
