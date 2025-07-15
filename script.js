@@ -1,7 +1,7 @@
 // ✅ API KEYS
 const OPENWEATHER_KEY = "28c9c07e4563d1e1083997dec3ef8816";
 const WEATHERAPI_KEY = "64b0c23ba84b4bf8b05232742251407";
-const WEATHERBIT_KEY = "827c96a6c272494e8e8cd5ef43c3152f";
+const WEATHERBIT_KEY = "34e905674eb44cb39fb35299810213ab";
 
 // ✅ DOM ELEMENTS
 const searchBtn = document.getElementById("search_btn");
